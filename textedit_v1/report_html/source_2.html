@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><HEAD>
+<title>vadefs.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+#NavigationMenu, #NavigationMenu ul{   padding:0;   margin:0;   list-style:none;   text-align:center;}
+#NavigationMenu li{   display:inline-block;   position:relative;   width:15em;}
+#NavigationMenu li.NavigationSubMenu{   border-radius:8px 8px 0 0;}
+#NavigationMenu li.NavigationNoSubMenu{   border-radius:8px 8px 8px 8px;}
+#NavigationMenu ul li{   display:inherit;   border-radius:0;   width:15em;}
+#NavigationMenu ul li:hover{   border-radius:0;}
+#NavigationMenu ul li:last-child{   border-radius:0 0 8px 8px;}
+#NavigationMenu ul{   position:absolute;   z-index: 1000;   max-height:0;   left: 0;   right: 0;   overflow:hidden;   -moz-transition: .3s all .1s;   -webkit-transition: .3s all .1s;   transition: .3s all .1s;}
+#NavigationMenu li:hover ul{   max-height:25em;}
+#NavigationMenu li{   background-color: #DFD;   background: -moz-linear-gradient(top, #DFD, #9C9);   background: -webkit-gradient(linear, left top, left bottom, from(#DFD), to(#9C9));   color: #17731f   width:15em;}
+#NavigationMenu li:hover, #NavigationMenu li li:hover{   background:#17731f;}
+#NavigationMenu a, #NavigationMenu span{   text-decoration:none;   display:block;   padding:8px 32px;   color:#46880f;   font-family:arial;   font-weight: bold; }
+#NavigationMenu ul a{   padding:8px 0;}
+#NavigationMenu li:hover li a{   text-transform:inherit;   color:#46880f;}
+#NavigationMenu li:hover a, #NavigationMenu li li:hover a, #NavigationMenu li li:hover span{   color:#DFD;}
+</style>
+<link rel="stylesheet" type="text/css" href="squishcoco_styles.css">
+</HEAD>
+<body>
+
+<PRE><noscript>Squish Coco Report is not displayed correctly
+
+Squish Coco Report requires JavaScript to be run to display results. JavaScript was not run due to:
+ - you have disabled scripts in your browser
+ - you have a browser that doesn't support script
+ - you are displaying this report in <b>Jenkins</b> and Content Security Policy blocks script to be run
+
+
+If you experience this problem when displaying this report in Jenkins please visit 
+"Knowledge Base Article Content Security Policy (CSP) for Web Report" ( https://kb.froglogic.com/display/KB/Content+Security+Policy+%28CSP%29+for+Web+Report )
+for a solution.
+</noscript></PRE>
+<ul id="NavigationMenu">
+<li class="NavigationNoSubMenu"><a href="index.html">Overview</a></li>
+<li class="NavigationSubMenu"><span>Sources</span>
+<ul>
+<li><a href="sources.html">List</a></li>
+<li><a href="source_tree.html">Tree</a></li>
+<li><a href="directories.html">Directories</a></li>
+</ul></li>
+<li class="NavigationSubMenu"><span>Functions</span>
+<ul>
+<li><a href="functions.html">List</a></li>
+<li><a href="function_tree.html">Tree</a></li>
+<li><a href="classes.html">Classes/Namespaces</a></li>
+</ul></li>
+<li class="NavigationNoSubMenu"><a href="dead_code.html">Dead Code</a></li>
+</ul>
+
+<h1>vadefs.h</h1>
+<TABLE summary="information" class="HtmlInformationSourceFile"><TR class="HtmlInformationSourceFileItem"><TD class="HtmlInformationSourceFileDescription">Absolute File Name:</TD><TD class="HtmlInformationSourceFileValue">C:\MinGw11\mingw64\x86_64-w64-mingw32\include\vadefs.h</TD></TR></TABLE><TABLE summary="table" border="0" style="width:100%"><TR><TD>Source code</TD><TD align="right"><A href="source_2_preprocessed.html" class="HtmlLink">Switch to Preprocessed file</A></TD></TR></TABLE><TABLE class="SourceCode_Text"><TR class="SourceCode_Line"><TH class="SourceCode_TitleNumber">Line</TH><TH class="SourceCode_TitleText">Source</TH><TH class="SourceCode_TitleCount">Count</TH></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line1" class="SourceCode_LineNumberLink">1</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment">/**</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line2" class="SourceCode_LineNumberLink">2</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment"> * This file has no copyright assigned and is placed in the Public Domain.</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line3" class="SourceCode_LineNumberLink">3</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment"> * This file is part of the mingw-w64 runtime package.</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line4" class="SourceCode_LineNumberLink">4</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment"> * No warranty is given; refer to the file DISCLAIMER.PD within this package.</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line5" class="SourceCode_LineNumberLink">5</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment"> */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line6" class="SourceCode_LineNumberLink">6</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifndef _INC_VADEFS</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line7" class="SourceCode_LineNumberLink">7</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _INC_VADEFS</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line8" class="SourceCode_LineNumberLink">8</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line9" class="SourceCode_LineNumberLink">9</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#include &lt;_mingw.h&gt;</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line10" class="SourceCode_LineNumberLink">10</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line11" class="SourceCode_LineNumberLink">11</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifndef __WIDL__</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line12" class="SourceCode_LineNumberLink">12</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#undef _CRT_PACKING</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line13" class="SourceCode_LineNumberLink">13</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _CRT_PACKING 8</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line14" class="SourceCode_LineNumberLink">14</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#pragma pack(push,_CRT_PACKING)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line15" class="SourceCode_LineNumberLink">15</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line16" class="SourceCode_LineNumberLink">16</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line17" class="SourceCode_LineNumberLink">17</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifdef __cplusplus</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line18" class="SourceCode_LineNumberLink">18</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Operator">extern</SPAN> <SPAN class="SourceCode_String">&quot;C&quot;</SPAN> <SPAN class="SourceCode_Operator">{</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line19" class="SourceCode_LineNumberLink">19</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line20" class="SourceCode_LineNumberLink">20</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line21" class="SourceCode_LineNumberLink">21</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#if defined (__GNUC__)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line22" class="SourceCode_LineNumberLink">22</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifndef __GNUC_VA_LIST</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line23" class="SourceCode_LineNumberLink">23</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define __GNUC_VA_LIST</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line24" class="SourceCode_LineNumberLink">24</A></TD><TD class="SourceCode_LineText">  <SPAN class="SourceCode_Operator">typedef</SPAN> __builtin_va_list __gnuc_va_list<SPAN class="SourceCode_Keyword">;</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line25" class="SourceCode_LineNumberLink">25</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line26" class="SourceCode_LineNumberLink">26</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif /* __GNUC__ */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line27" class="SourceCode_LineNumberLink">27</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line28" class="SourceCode_LineNumberLink">28</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifndef _VA_LIST_DEFINED	/* if stdargs.h didn't define it */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line29" class="SourceCode_LineNumberLink">29</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _VA_LIST_DEFINED</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line30" class="SourceCode_LineNumberLink">30</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#if defined(__GNUC__)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line31" class="SourceCode_LineNumberLink">31</A></TD><TD class="SourceCode_LineText">  <SPAN class="SourceCode_Operator">typedef</SPAN> __gnuc_va_list va_list<SPAN class="SourceCode_Keyword">;</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line32" class="SourceCode_LineNumberLink">32</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#elif defined(_MSC_VER)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line33" class="SourceCode_LineNumberLink">33</A></TD><TD class="SourceCode_LineText">  <SPAN class="SourceCode_Operator">typedef</SPAN> char <SPAN class="SourceCode_Operator">*</SPAN>  va_list<SPAN class="SourceCode_Keyword">;</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line34" class="SourceCode_LineNumberLink">34</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#elif !defined(__WIDL__)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line35" class="SourceCode_LineNumberLink">35</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#error VARARGS not implemented for this compiler</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line36" class="SourceCode_LineNumberLink">36</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line37" class="SourceCode_LineNumberLink">37</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif /* _VA_LIST_DEFINED */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line38" class="SourceCode_LineNumberLink">38</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line39" class="SourceCode_LineNumberLink">39</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifdef __cplusplus</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line40" class="SourceCode_LineNumberLink">40</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _ADDRESSOF(v) (&amp;reinterpret_cast&lt;const char &amp;&gt;(v))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line41" class="SourceCode_LineNumberLink">41</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#else</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line42" class="SourceCode_LineNumberLink">42</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _ADDRESSOF(v) (&amp;(v))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line43" class="SourceCode_LineNumberLink">43</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line44" class="SourceCode_LineNumberLink">44</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line45" class="SourceCode_LineNumberLink">45</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#if defined (__GNUC__)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line46" class="SourceCode_LineNumberLink">46</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment">/* Use GCC builtins */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line47" class="SourceCode_LineNumberLink">47</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line48" class="SourceCode_LineNumberLink">48</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_start(v,l)	__builtin_va_start(v,l)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line49" class="SourceCode_LineNumberLink">49</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_arg(v,l)	__builtin_va_arg(v,l)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line50" class="SourceCode_LineNumberLink">50</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_end(v)		__builtin_va_end(v)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line51" class="SourceCode_LineNumberLink">51</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_copy(d,s)	__builtin_va_copy(d,s)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line52" class="SourceCode_LineNumberLink">52</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line53" class="SourceCode_LineNumberLink">53</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#elif defined(_MSC_VER)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line54" class="SourceCode_LineNumberLink">54</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Comment">/* MSVC specific */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line55" class="SourceCode_LineNumberLink">55</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line56" class="SourceCode_LineNumberLink">56</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#if defined(_M_IA64)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line57" class="SourceCode_LineNumberLink">57</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _VA_ALIGN 8</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line58" class="SourceCode_LineNumberLink">58</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _SLOTSIZEOF(t) ((sizeof(t) + _VA_ALIGN - 1) &amp; ~(_VA_ALIGN - 1))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line59" class="SourceCode_LineNumberLink">59</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _VA_STRUCT_ALIGN 16</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line60" class="SourceCode_LineNumberLink">60</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _ALIGNOF(ap) ((((ap)+_VA_STRUCT_ALIGN - 1) &amp; ~(_VA_STRUCT_ALIGN -1)) - (ap))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line61" class="SourceCode_LineNumberLink">61</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _APALIGN(t,ap) (__alignof(t) &gt; 8 ? _ALIGNOF((uintptr_t) ap) : 0)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line62" class="SourceCode_LineNumberLink">62</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#else</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line63" class="SourceCode_LineNumberLink">63</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _SLOTSIZEOF(t) (sizeof(t))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line64" class="SourceCode_LineNumberLink">64</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _APALIGN(t,ap) (__alignof(t))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line65" class="SourceCode_LineNumberLink">65</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line66" class="SourceCode_LineNumberLink">66</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line67" class="SourceCode_LineNumberLink">67</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#if defined(_M_IX86)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line68" class="SourceCode_LineNumberLink">68</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line69" class="SourceCode_LineNumberLink">69</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _INTSIZEOF(n) ((sizeof(n) + sizeof(int) - 1) &amp; ~(sizeof(int) - 1))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line70" class="SourceCode_LineNumberLink">70</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_start(v,l)	((v) = (va_list)_ADDRESSOF(l) + _INTSIZEOF(l))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line71" class="SourceCode_LineNumberLink">71</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_arg(v,l)	(*(l *)(((v) += _INTSIZEOF(l)) - _INTSIZEOF(l)))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line72" class="SourceCode_LineNumberLink">72</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_end(v)		((v) = (va_list)0)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line73" class="SourceCode_LineNumberLink">73</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_copy(d,s)	((d) = (s))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line74" class="SourceCode_LineNumberLink">74</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line75" class="SourceCode_LineNumberLink">75</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#elif defined(_M_AMD64)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line76" class="SourceCode_LineNumberLink">76</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line77" class="SourceCode_LineNumberLink">77</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _PTRSIZEOF(n) ((sizeof(n) + sizeof(void*) - 1) &amp; ~(sizeof(void*) - 1))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line78" class="SourceCode_LineNumberLink">78</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _ISSTRUCT(t)  ((sizeof(t) &gt; sizeof(void*)) || (sizeof(t) &amp; (sizeof(t) - 1)) != 0)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line79" class="SourceCode_LineNumberLink">79</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_start(v,l)	((v) = (va_list)_ADDRESSOF(l) + _PTRSIZEOF(l))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line80" class="SourceCode_LineNumberLink">80</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_arg(v,t)	_ISSTRUCT(t) ?						\</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line81" class="SourceCode_LineNumberLink">81</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">				 (**(t**)(((v) += sizeof(void*)) - sizeof(void*))) :	\</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line82" class="SourceCode_LineNumberLink">82</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">				 ( *(t *)(((v) += sizeof(void*)) - sizeof(void*)))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line83" class="SourceCode_LineNumberLink">83</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_end(v)		((v) = (va_list)0)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line84" class="SourceCode_LineNumberLink">84</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#define _crt_va_copy(d,s)	((d) = (s))</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line85" class="SourceCode_LineNumberLink">85</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line86" class="SourceCode_LineNumberLink">86</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#elif defined(_M_IA64)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line87" class="SourceCode_LineNumberLink">87</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line88" class="SourceCode_LineNumberLink">88</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#error VARARGS not implemented for IA64</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line89" class="SourceCode_LineNumberLink">89</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line90" class="SourceCode_LineNumberLink">90</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#else</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line91" class="SourceCode_LineNumberLink">91</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line92" class="SourceCode_LineNumberLink">92</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#error VARARGS not implemented for this TARGET</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line93" class="SourceCode_LineNumberLink">93</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line94" class="SourceCode_LineNumberLink">94</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif /* cpu ifdefs */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line95" class="SourceCode_LineNumberLink">95</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line96" class="SourceCode_LineNumberLink">96</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif /* compiler ifdefs */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line97" class="SourceCode_LineNumberLink">97</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line98" class="SourceCode_LineNumberLink">98</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifdef __cplusplus</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line99" class="SourceCode_LineNumberLink">99</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Operator">}</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line100" class="SourceCode_LineNumberLink">100</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line101" class="SourceCode_LineNumberLink">101</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line102" class="SourceCode_LineNumberLink">102</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#ifndef __WIDL__</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line103" class="SourceCode_LineNumberLink">103</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#pragma pack(pop)</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line104" class="SourceCode_LineNumberLink">104</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line105" class="SourceCode_LineNumberLink">105</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line106" class="SourceCode_LineNumberLink">106</A></TD><TD class="SourceCode_LineText"><SPAN class="SourceCode_Preprocessor">#endif /* _INC_VADEFS */</SPAN></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"><A name="line107" class="SourceCode_LineNumberLink">107</A></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount">-</TD></TR>
+<TR class="SourceCode_Line"><TD class="SourceCode_LineNumber"></TD><TD class="SourceCode_LineText"></TD><TD class="SourceCode_LineCount"></TD></TR>
+</TABLE><TABLE summary="table" border="0" style="width:100%"><TR><TD>Source code</TD><TD align="right"><A href="source_2_preprocessed.html" class="HtmlLink">Switch to Preprocessed file</A></TD></TR></TABLE><HR>
+<center>
+<font size="1">Generated by <a href="https://www.qt.io/product/quality-assurance/coco">Squish Coco</a> 7.0.0</font>
+</center>
+</body></html>
