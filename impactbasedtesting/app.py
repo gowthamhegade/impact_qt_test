@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 import generate_coverage_report
-import suggest_test
+import suggest_test_cases
 import database
 from pathlib import Path
 
