@@ -22,6 +22,7 @@ def main():
     except Exception as e:
         print(e)
     
+    #Scenario from algoaf test case script
     scenario_list = generate_coverage_report.extract_tags(os.path.join(test_scripts_path,"AlgoAfScripts\\Features"))
     
     st.header("Impact Based Testing - Demo",)
@@ -30,6 +31,7 @@ def main():
     if col1.button("Execute test cases"):
         with st.spinner('Please Wait!'):
             for scenario in scenario_list:
+                # scenario lists xml file
                 xml_file_path = os.path.join(reports_path,f"xml\\{scenario}.xml")
                 generate_coverage_report.report_generation(scenario,result_path,reports_path, test_scripts_path, executable_path)    
                 files = os.listdir(result_path)

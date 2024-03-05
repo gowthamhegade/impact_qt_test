@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def process_csv_file(input_csv_file, output_excel_file):
+def process_csv_file(input_csv_file, output_excel_file, Scenario):
     # Read CSV file into a DataFrame
     df = pd.read_csv(input_csv_file, delimiter='\t') 
 
@@ -34,7 +34,7 @@ def process_csv_file(input_csv_file, output_excel_file):
     for column in columns_to_process:
         extracted_data[column.replace('"', '')] = extracted_data[column].str.strip('"')
         extracted_data = extracted_data.drop(columns=[column])
-        
+    extracted_data['Scenario'] = Scenario
     # Save to Excel file
     extracted_data.to_excel(output_excel_file, index=False)
 
@@ -43,16 +43,18 @@ def process_all_csv_files(data_folder, results_folder):
     csv_files = [file for file in os.listdir(data_folder) if file.endswith('.csv')]
 
     # Process each CSV file
-    for test_case in csv_files:
-        if not os.path.exists('results'):
-            os.makedirs('results')
+    for index, test_case in enumerate(csv_files, start=1):
+        if not os.path.exists(results_folder):
+            os.makedirs(results_folder)
+
         # Generate input and output file paths
         input_csv_file = os.path.join(data_folder, test_case)
-        output_excel_file = os.path.join(results_folder, f'results_{os.path.splitext(test_case)[0]}.xlsx')
+        output_excel_file = os.path.join(results_folder, f'coverage_test{index:03d}.xlsx')
 
         # Process the CSV file
-        process_csv_file(input_csv_file, output_excel_file)
+        process_csv_file(input_csv_file, output_excel_file, 'test' + f'{index:03d}')
+
 
 # Call the function to process all CSV files
-process_all_csv_files(data_folder='data/', results_folder='results/')
+process_all_csv_files(data_folder='data/', results_folder='results/coverage_reports')
 
