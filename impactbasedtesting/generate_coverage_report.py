@@ -26,7 +26,15 @@ def process_csv_file(input_csv_file, output_excel_file):
     # Drop the first row as it's now redundant as column names
     extracted_data = extracted_data[1:]
     extracted_data = extracted_data[1:]
+    columns_to_process = ['"Position"', '"Prototype"', '"File"', '"Absolute Path"', '"Executed Instrumentations"',
+                         '"Manually Validated Instrumentations"', '"Count of Instrumentations"',
+                         '"eLOC - Effective Lines of Code"', '"McCabe - Cyclomatic Complexity"']  
 
+    # Remove double quotes and drop columns for each specified column
+    for column in columns_to_process:
+        extracted_data[column.replace('"', '')] = extracted_data[column].str.strip('"')
+        extracted_data = extracted_data.drop(columns=[column])
+        
     # Save to Excel file
     extracted_data.to_excel(output_excel_file, index=False)
 

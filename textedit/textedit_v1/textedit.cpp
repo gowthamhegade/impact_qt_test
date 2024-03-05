@@ -40,6 +40,7 @@ const QString rsrcPath = ":/images";
    setupFileActions();
    setupEditActions();
    setupTextActions();
+   
 
    {
       QMenu *helpMenu = new QMenu(tr("Help"), this);
@@ -57,6 +58,7 @@ const QString rsrcPath = ":/images";
    setCentralWidget(textEdit);
    textEdit->setFocus();
    setCurrentFileName(QString());
+   //cout << "Hello World!";
 
    fontChanged(textEdit->font());
    colorChanged(textEdit->textColor());
