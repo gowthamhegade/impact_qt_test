@@ -1,23 +1,44 @@
-import os
-import re
+import pygit2
+from difflib import unified_diff
 
-def extract_tags(directory_path):
-    def remove_prefix(prefix, folders):
-        return [folder[len(prefix):] if folder.startswith(prefix) else folder for folder in folders]
+def get_function_diff(repo_path, old_commit, new_commit):
+    repo = pygit2.Repository(repo_path)
 
-    all_items = os.listdir(directory_path)
-    folders = [item for item in all_items if os.path.isdir(os.path.join(directory_path, item))]
-    pattern = re.compile(r'^tst_')
-    selected_folders = [folder for folder in folders if pattern.match(folder)]
+    function_diff = []
 
-    if "tst_":
-        selected_folders = remove_prefix("tst_", selected_folders)
+    for entry in repo.walk(repo.revparse_single(old_commit).oid, pygit2.GIT_SORT_TOPOLOGICAL):
+        old_blob = entry.tree
+        new_blob = repo[new_commit].tree
 
-    return selected_folders
+        for old_entry, new_entry in zip(old_blob, new_blob):
+            if old_entry.type == pygit2.GIT_OBJ_BLOB and old_entry.name.endswith('.cpp'):
+                old_content = repo[old_entry.id].data.decode('utf-8')
+                new_content = repo[new_entry.id].data.decode('utf-8')
 
-# Example usage:
-directory_path = "C:/Users/Dell/Documents/qtcc/GitHub/impact_qt_test/textedit/suite_TextEditSuite"
+                # Compute unified diff
+                diff = unified_diff(old_content.splitlines(), new_content.splitlines(), lineterm='')
 
-selected_folders = extract_tags(directory_path)
+                # Extract function-level changes
+                in_function = False
+                for line in diff:
+                    if line.startswith("@@"):
+                        in_function = True
+                        function_diff.append(line)
+                    elif in_function and (line.startswith("-") or line.startswith("+")):
+                        function_diff.append(line)
+                    elif in_function and line.startswith(" "):
+                        break
+                    elif in_function and not line.startswith("@@"):
+                        in_function = False
 
-print(selected_folders)
+    return '\n'.join(function_diff)
+
+
+# Example usage
+repo_path = "C:\\Users\\Dell\\Documents\\qtcc\\GitHub\\impact_qt_test"
+old_commit = 'a647b7501523c048926b27382ae636bdee623434'
+new_commit = 'be909fa7ea7f33a222a52867fa7a8808c7b3a358'
+file_path = 'path/to/your/file.cpp'
+
+result = get_function_diff(repo_path, old_commit, new_commit)
+print(result)
