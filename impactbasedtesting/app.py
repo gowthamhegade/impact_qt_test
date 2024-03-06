@@ -9,7 +9,7 @@ def main():
     
     # Set paths set in config.py
     repo_path               = database.REPO_PATH
-    #executable_path         = database.EXECUTABLE_PATH
+    executable_path         = database.EXECUTABLE_PATH
     test_scripts_path       = database.TEST_SCRIPTS_PATH
     result_path             = database.RESULT_PATH
     start_commit            = database.START_COMMIT
