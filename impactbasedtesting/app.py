@@ -23,7 +23,7 @@ def main():
         print(e)
     
     #Scenario from algoaf test case script
-    scenario_list = generate_coverage_report.extract_tags(os.path.join(test_scripts_path,"AlgoAfScripts\\Features"))
+    scenario_list = generate_coverage_report.extract_tags(test_scripts_path)
     
     st.header("Impact Based Testing - Demo",)
     col1, col2 = st.columns([1,1])
@@ -32,17 +32,21 @@ def main():
         with st.spinner('Please Wait!'):
             for scenario in scenario_list:
                 # scenario lists xml file
-                xml_file_path = os.path.join(reports_path,f"xml\\{scenario}.xml")
-                generate_coverage_report.report_generation(scenario,result_path,reports_path, test_scripts_path, executable_path)    
+                #xml_file_path = os.path.join(reports_path,f"xml\\{scenario}.xml")
+                #generate_coverage_report.report_generation(scenario,result_path,reports_path, test_scripts_path, executable_path)    
+                generate_coverage_report.report_generation(data_folder='data/', results_folder=result_path+'/coverage_reports', scenario=scenario)
                 files = os.listdir(result_path)
-                if 'filename_to_class_mapping.xlsx' in files:
-                    generate_coverage_report.extract_coverage_info(xml_file_path, result_path, scenario)
-                else:
-                    generate_coverage_report.extract_coverage_info(xml_file_path,result_path,scenario,mapping=True)
+
+
+
+                # if 'filename_to_class_mapping.xlsx' in files:
+                #     generate_coverage_report.extract_coverage_info(xml_file_path, result_path, scenario)
+                # else:
+                #     generate_coverage_report.extract_coverage_info(xml_file_path,result_path,scenario,mapping=True)
         st.success("Test cases are executed and code coverage reports are generated!")
     
     if col2.button("Recommend impacted test cases"):
-        final_changes = suggest_test.git_diff(repo_path,result_path,start_commit)
+        final_changes = suggest_test_cases.git_diff(repo_path,result_path,start_commit)
         coverage_path = ""
         
         try:
@@ -52,7 +56,7 @@ def main():
         except Exception as e:
             print(e)
             
-        recommendation = suggest_test.recommend_test_cases(coverage_path,final_changes)
+        recommendation = suggest_test_cases.recommend_test_cases(coverage_path,final_changes)
         
         try:
             with open(os.path.join(result_path,'recommended_test_cases.txt'), 'w') as f:

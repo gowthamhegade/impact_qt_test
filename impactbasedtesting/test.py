@@ -1,45 +1,23 @@
 import os
-import pandas as pd
+import re
 
-def process_csv_file(input_csv_file, output_excel_file):
-    # Read CSV file into a DataFrame
-    df = pd.read_csv(input_csv_file, delimiter='\t')  # Replace '\t' with the actual delimiter
+def extract_tags(directory_path):
+    def remove_prefix(prefix, folders):
+        return [folder[len(prefix):] if folder.startswith(prefix) else folder for folder in folders]
 
-    # Extract rows between "Function tree" and "Function"
-    start_index = df.index[df.iloc[:, 0] == 'Function Tree'].tolist()[0] + 1
-    end_index = df.index[df.iloc[:, 0] == 'Functions'].tolist()[0]
-    extracted_data = df.iloc[start_index:end_index]
+    all_items = os.listdir(directory_path)
+    folders = [item for item in all_items if os.path.isdir(os.path.join(directory_path, item))]
+    pattern = re.compile(r'^tst_')
+    selected_folders = [folder for folder in folders if pattern.match(folder)]
 
-    # Split columns
-    split_columns = extracted_data.iloc[:, 0].str.split(',', expand=True)
+    if "tst_":
+        selected_folders = remove_prefix("tst_", selected_folders)
 
-    # Assign new columns to the DataFrame
-    extracted_data = pd.concat([extracted_data, split_columns], axis=1)
-    extracted_data = extracted_data.iloc[0:, 1:]
+    return selected_folders
 
-    # Replace existing column names with values from the first row
-    extracted_data.columns = extracted_data.iloc[0]
+# Example usage:
+directory_path = "C:/Users/Dell/Documents/qtcc/GitHub/impact_qt_test/textedit/suite_TextEditSuite"
 
-    # Drop the first row as it's now redundant as column names
-    extracted_data = extracted_data[1:]
+selected_folders = extract_tags(directory_path)
 
-    # Save to Excel file
-    extracted_data.to_excel(output_excel_file, index=False)
-
-def process_all_csv_files(data_folder='data/', results_folder='results/'):
-    # Get a list of all CSV files in the data folder
-    csv_files = [file for file in os.listdir(data_folder) if file.endswith('.csv')]
-
-    # Process each CSV file
-    for test_case in csv_files:
-        if not os.path.exists('results'):
-            os.makedirs('results')
-        # Generate input and output file paths
-        input_csv_file = os.path.join(data_folder, test_case)
-        output_excel_file = os.path.join(results_folder, f'results_{os.path.splitext(test_case)[0]}.xlsx')
-
-        # Process the CSV file
-        process_csv_file(input_csv_file, output_excel_file)
-
-# Call the function to process all CSV files
-process_all_csv_files()
+print(selected_folders)
