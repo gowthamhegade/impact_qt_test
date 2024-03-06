@@ -58,7 +58,6 @@ const QString rsrcPath = ":/images";
    setCentralWidget(textEdit);
    textEdit->setFocus();
    setCurrentFileName(QString());
-   cout << "Hello World!";
 
    fontChanged(textEdit->font());
    colorChanged(textEdit->textColor());
