@@ -1,6 +1,6 @@
 REPO_PATH = "C:\\Users\\Dell\\Documents\\qtcc\\GitHub\\impact_qt_test"
 RESULT_PATH = REPO_PATH + "\\impactbasedtesting\\results"
 EXECUTABLE_PATH = REPO_PATH + "\\textedit\\textedit_v1\\textedit.exe"
-# TEST_SCRIPTS_PATH = REPO_PATH + "\\impactbasedtesting\\ScriptGeneration_202401191029\\AlgoAFScript_202401191029"
+# TEST_SCRIPTS_PATH = REPO_PATH + "\\textedit\\suite_TextEditSuite"
 TEST_SCRIPTS_PATH = REPO_PATH + "\\textedit\\suite_TextEditSuite"
 START_COMMIT = "a647b7501523c048926b27382ae636bdee623434"
