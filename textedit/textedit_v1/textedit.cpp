@@ -111,6 +111,7 @@ void TextEdit::setupFileActions()
 
    QMenu *menu = new QMenu(tr("&File"), this);
    menuBar()->addMenu(menu);
+   cout<<'hello';
 
    QAction *a;
 
