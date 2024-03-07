@@ -34,15 +34,15 @@ def main():
                 # scenario lists xml file
                 #xml_file_path = os.path.join(reports_path,f"xml\\{scenario}.xml")
                 #generate_coverage_report.report_generation(scenario,result_path,reports_path, test_scripts_path, executable_path)    
-                generate_coverage_report.report_generation(data_folder='data/', results_folder=result_path+'/coverage_reports', scenario=scenario)
+                generate_coverage_report.report_generation(data_folder='data/', results_folder=result_path+'\\coverage_reports', scenario=scenario)
                 files = os.listdir(result_path)
 
 
 
                 # if 'filename_to_class_mapping.xlsx' in files:
-                #     generate_coverage_report.extract_coverage_info(xml_file_path, result_path, scenario)
+                #      generate_coverage_report.extract_coverage_info(xml_file_path, result_path, scenario)
                 # else:
-                #     generate_coverage_report.extract_coverage_info(xml_file_path,result_path,scenario,mapping=True)
+                #      generate_coverage_report.extract_coverage_info(xml_file_path,result_path,scenario,mapping=True)
         st.success("Test cases are executed and code coverage reports are generated!")
     
     if col2.button("Recommend impacted test cases"):

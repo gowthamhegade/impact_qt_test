@@ -1,4 +1,4 @@
-import os, re
+import os, re, database, shutil, subprocess
 import pandas as pd
 
 def extract_tags(directory_path):
@@ -15,8 +15,22 @@ def extract_tags(directory_path):
 
     return selected_folders
 
+def cli_commands():
+    tst_folders = [folder for folder in os.listdir(database.TEST_SCRIPTS_PATH) if os.path.isdir(os.path.join(database.TEST_SCRIPTS_PATH, folder)) and folder.startswith("tst_")]
+    for test_case in tst_folders:
+        test_cases_path = database.TEST_SCRIPTS_PATH
+        exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
+        report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
+        try:
+            subprocess.run(exe_command, shell=True, check=True)
+            subprocess.run(report_command, shell=True, check=True)
+        except subprocess.CalledProcessError as e:
+        print(f"Error running test cases {test_case}: {e}")
+    for test_case in tst_folders:
+        shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
 
 def process_csv_file(input_csv_file, output_excel_file, Scenario):
+    cli_commands()
     df = pd.read_csv(input_csv_file, delimiter='\t') 
     start_index = df.index[df.iloc[:, 0] == 'Function Tree'].tolist()[0] + 1
     end_index = df.index[df.iloc[:, 0] == 'Functions'].tolist()[0]
@@ -41,9 +55,15 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
         extracted_data[column.replace('"', '')] = extracted_data[column].str.strip('"')
         extracted_data = extracted_data.drop(columns=[column])
     extracted_data['Scenario'] = Scenario
-    extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
+    # Updated lambda function
+    # Assuming extracted_data is your DataFram
+
+    extracted_data['Coverage_Percentage'] = extracted_data['"Multiple Conditions %"'].str.replace('=', '').apply(eval)
+    # print(extracted_data['Coverage_Percentage'])
+    # extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
     extracted_data.rename(columns={'File': 'File_Name'}, inplace=True)
-    extracted_data.rename(columns={'Prototype': 'Method'}, inplace=True)
+    extracted_data.rename(columns={'Function': 'Method'}, inplace=True)
+    
 
     extracted_data.to_excel(output_excel_file, index=False)
 
@@ -61,5 +81,5 @@ def report_generation(data_folder, results_folder, scenario):
 
 
 
-report_generation(data_folder='data/', results_folder='results/coverage_reports', scenario = 'LaunchApplication')
+# report_generation(data_folder='data/', results_folder='results/coverage_reports', scenario = 'LaunchApplication')
 

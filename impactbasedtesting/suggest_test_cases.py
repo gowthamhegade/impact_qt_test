@@ -64,14 +64,24 @@ print(git_diff(repo_path, result_path, start_commit))
 
 def recommend_test_cases(coverage_path,final_changes):
     df_temp_list = []
-    all_reports = glob.glob(os.path.join(coverage_path, "*.xlsx"))
+    all_files = os.listdir(coverage_path)
+    all_reports = [file for file in all_files if os.path.splitext(file)[1].lower() == '.xlsx']
+
     for filename in all_reports:
-        df_temp_list.append(pd.read_excel(filename, index_col=0))
+        df_temp_list.append(pd.read_excel(os.path.join(coverage_path, filename)))
     df_coverage = pd.concat(df_temp_list)
+    # print(df_coverage['Coverage_Percentage'])
     
     filtered_df = df_coverage[df_coverage.apply(lambda row: row['File_Name'] in final_changes.keys() and row['Method'] in final_changes[row['File_Name']], axis=1)].reset_index(drop=True)
-    
+    # print(filtered_df)
     grouped_df = filtered_df.groupby(['Method'])['Coverage_Percentage'].idxmax()
+    # print(grouped_df)
     selected_test_cases = filtered_df.loc[grouped_df]['Scenario'].unique()
+    print(selected_test_cases)
     
     return list(selected_test_cases)
+
+
+coverage_path = 'C:\\Users\\Dell\\Documents\\qtcc\\GitHub\\impact_qt_test\\impactbasedtesting\\results\\coverage_reports'
+final_changes = git_diff(repo_path,result_path,start_commit)
+recommend_test_cases(coverage_path,final_changes)
