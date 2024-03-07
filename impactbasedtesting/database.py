@@ -3,5 +3,5 @@ RESULT_PATH = REPO_PATH + "\\impactbasedtesting\\results"
 EXECUTABLE_PATH = REPO_PATH + "\\textedit\\textedit_v1\\textedit.exe"
 # TEST_SCRIPTS_PATH = REPO_PATH + "\\textedit\\suite_TextEditSuite"
 TEST_SCRIPTS_PATH = REPO_PATH + "\\textedit\\suite_TextEditSuite"
-START_COMMIT = "a98d076230d476cd06a709a769c4cd46b3de253c"
+START_COMMIT = "f28b0e038e671b3e9ca2aea99b2ebd5080c8ed03"
 DATA_PATH = REPO_PATH + 'impactbasedtesting\data'
