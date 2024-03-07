@@ -106,7 +106,6 @@ void TextEdit::closeEvent(QCloseEvent *e)
 void TextEdit::setupFileActions()
 {
    QToolBar *tb = new QToolBar(this);
-   cout<<'hello';
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
 
