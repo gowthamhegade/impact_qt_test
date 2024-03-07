@@ -54,11 +54,11 @@ const QString rsrcPath = ":/images";
          this, SLOT(currentCharFormatChanged(QTextCharFormat)));
    connect(textEdit, SIGNAL(cursorPositionChanged()),
          this, SLOT(cursorPositionChanged()));
+   cout << 'hello';
 
    setCentralWidget(textEdit);
    textEdit->setFocus();
    setCurrentFileName(QString());
-   cout<<"hello";
 
    fontChanged(textEdit->font());
    colorChanged(textEdit->textColor());
