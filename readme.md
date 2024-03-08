@@ -38,6 +38,12 @@
 ### 5. Install Dependencies and Run Application
    - In the second CMD, run the following commands:
      ```bash
+     cd impactbasedtesting
      pip install -r requirements.txt
      streamlit run app.py
      ```
+
+## Notes
+
+- **Path Considerations:** Change the paths in database.py according to the directory structure.
+
