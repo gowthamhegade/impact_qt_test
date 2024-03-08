@@ -2,13 +2,13 @@
 
 ## Requirements
 
-1. [Squish COCO] v[X.X.X]
+1. Squish COCO v
 2. QT Source codes
-3. [Git Bash]
-4. [Python 3.11.5
-5. [CMD]
-6. [MingW] v[X.X.X]
-7. [Chocolatey] v[X.X.X]
+3. Git Bash
+4. Python 3.11.5
+5. CMD
+6. MingW v
+7. Chocolatey v
 
 ## Setup Steps
 
