@@ -39,6 +39,8 @@
    - In the second CMD, run the following commands:
      ```bash
      cd impactbasedtesting
+     python -m venv impactbasedtesting
+     impactbasedtesting\Scripts\activate
      pip install -r requirements.txt
      streamlit run app.py
      ```
