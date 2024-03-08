@@ -82,6 +82,6 @@ def recommend_test_cases(coverage_path,final_changes):
     return list(selected_test_cases)
 
 
-coverage_path = 'C:\\Users\\Dell\\Documents\\qtcc\\GitHub\\impact_qt_test\\impactbasedtesting\\results\\coverage_reports'
-final_changes = git_diff(repo_path,result_path,start_commit)
-recommend_test_cases(coverage_path,final_changes)
+# coverage_path = 'C:\\Users\\Dell\\Documents\\qtcc\\GitHub\\impact_qt_test\\impactbasedtesting\\results\\coverage_reports'
+# final_changes = git_diff(repo_path,result_path,start_commit)
+# recommend_test_cases(coverage_path,final_changes)

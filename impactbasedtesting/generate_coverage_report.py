@@ -20,17 +20,16 @@ def cli_commands():
     for test_case in tst_folders:
         test_cases_path = database.TEST_SCRIPTS_PATH
         exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
-        report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
+        # report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
         try:
             subprocess.run(exe_command, shell=True, check=True)
-            subprocess.run(report_command, shell=True, check=True)
+            # subprocess.run(report_command, shell=True, check=True)
         except subprocess.CalledProcessError as e:
-        print(f"Error running test cases {test_case}: {e}")
-    for test_case in tst_folders:
-        shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
+            print(f"Error running test cases {test_case}: {e}")
+    # for test_case in tst_folders:
+    #     shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
 
 def process_csv_file(input_csv_file, output_excel_file, Scenario):
-    cli_commands()
     df = pd.read_csv(input_csv_file, delimiter='\t') 
     start_index = df.index[df.iloc[:, 0] == 'Function Tree'].tolist()[0] + 1
     end_index = df.index[df.iloc[:, 0] == 'Functions'].tolist()[0]
@@ -57,7 +56,7 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     extracted_data['Scenario'] = Scenario
     # Updated lambda function
     # Assuming extracted_data is your DataFram
-
+    print(extracted_data.columns)
     extracted_data['Coverage_Percentage'] = extracted_data['"Multiple Conditions %"'].str.replace('=', '').apply(eval)
     # print(extracted_data['Coverage_Percentage'])
     # extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
