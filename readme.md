@@ -22,7 +22,7 @@
 ### 3. Start Squish Server
    - In CMD, run the following commands:
      ```bash
-     cd "Squish for Qt X.X.X\bin" 
+     cd Squish for Qt X.X.X\bin 
      squishserver.exe # Run Squish server
      ```
 
