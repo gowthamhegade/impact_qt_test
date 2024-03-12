@@ -59,7 +59,7 @@ executable_path         = database.EXECUTABLE_PATH
 test_scripts_path       = database.TEST_SCRIPTS_PATH
 result_path             = database.RESULT_PATH
 start_commit            = database.START_COMMIT
-print(git_diff(repo_path, result_path, start_commit))
+# print(git_diff(repo_path, result_path, start_commit))
 
 
 def recommend_test_cases(coverage_path,final_changes):

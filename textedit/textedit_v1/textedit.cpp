@@ -130,7 +130,7 @@ void TextEdit::setupFileActions()
    menu->addAction(a);
 
    menu->addSeparator();
-
+   cout << 'hello world';
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);
