@@ -20,14 +20,16 @@ def cli_commands():
     for test_case in tst_folders:
         test_cases_path = database.TEST_SCRIPTS_PATH
         exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
-        # report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
+        csexe_command = f"cmcsexeimport -m {database.EXECUTABLE_PATH}.csmes -t TestingReport -e {database.EXECUTABLE_PATH}.csexe"
+        report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
         try:
             subprocess.run(exe_command, shell=True, check=True)
-            # subprocess.run(report_command, shell=True, check=True)
+            subprocess.run(csexe_command, shell=True, check=True)
+            subprocess.run(report_command, shell=True, check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error running test cases {test_case}: {e}")
-    # for test_case in tst_folders:
-    #     shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
+    for test_case in tst_folders:
+        shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
 
 def process_csv_file(input_csv_file, output_excel_file, Scenario):
     df = pd.read_csv(input_csv_file, delimiter='\t') 
@@ -57,7 +59,7 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     # Updated lambda function
     # Assuming extracted_data is your DataFram
     print(extracted_data.columns)
-    extracted_data['Coverage_Percentage'] = extracted_data['"Multiple Conditions %"'].str.replace('=', '').apply(eval)
+    extracted_data['Coverage_Percentage'] = extracted_data['"Condition %"'].str.replace('=', '').apply(eval)
     # print(extracted_data['Coverage_Percentage'])
     # extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
     extracted_data.rename(columns={'File': 'File_Name'}, inplace=True)
