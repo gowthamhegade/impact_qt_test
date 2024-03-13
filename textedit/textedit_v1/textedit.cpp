@@ -108,7 +108,7 @@ void TextEdit::setupFileActions()
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
-   cout << 'hello';
+  
    QMenu *menu = new QMenu(tr("&File"), this);
    menuBar()->addMenu(menu);
 
@@ -128,7 +128,7 @@ void TextEdit::setupFileActions()
    connect(a, SIGNAL(triggered()), this, SLOT(fileOpen()));
    tb->addAction(a);
    menu->addAction(a);
-   cout << 'world';
+  
    menu->addSeparator();
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
