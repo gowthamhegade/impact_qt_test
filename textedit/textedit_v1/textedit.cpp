@@ -128,7 +128,7 @@ void TextEdit::setupFileActions()
    connect(a, SIGNAL(triggered()), this, SLOT(fileOpen()));
    tb->addAction(a);
    menu->addAction(a);
-   cout << 'hello';
+   
    menu->addSeparator();
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
@@ -657,6 +657,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with."));
+   cout << 'hello';
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
