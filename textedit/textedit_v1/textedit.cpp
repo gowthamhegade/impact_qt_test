@@ -128,7 +128,7 @@ void TextEdit::setupFileActions()
    connect(a, SIGNAL(triggered()), this, SLOT(fileOpen()));
    tb->addAction(a);
    menu->addAction(a);
-  
+   cout << 'hello';
    menu->addSeparator();
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
