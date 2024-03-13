@@ -31,25 +31,19 @@ def cli_commands():
         csexe_command = f"cmcsexeimport -m {executable_path}.csmes -t {test_case} -e {executable_path}.csexe"
         report_command = f"cmreport --csmes={executable_path}.csmes --csv-excel={test_case}.csv"
         try:
-            print('start1')
             subprocess.run(exe_command, shell=True, check=True)
-            print('end1')
-            print('start2')
             subprocess.run(csexe_command, shell=True, check=True)
-            print('end2')
-            print('start3')
-            subprocess.run(report_command, shell=True, check=True)
-            print('end3')
+            # subprocess.run(report_command, shell=True, check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error running test cases {test_case}: {e}")
-        if os.path.exists(f"{executable_path}.csexe"):
-           os.remove(f"{executable_path}.csexe")
-           print(f"File {executable_path}.csexe removed successfully.")
-        else:
-           print(f"File {executable_path}.csexe does not exist.")
+    #     if os.path.exists(f"{executable_path}.csexe"):
+    #        os.remove(f"{executable_path}.csexe")
+    #        print(f"File {executable_path}.csexe removed successfully.")
+    #     else:
+    #        print(f"File {executable_path}.csexe does not exist.")
 
-    for test_case in tst_folders:
-        shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
+    # for test_case in tst_folders:
+        # shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
 
 def process_csv_file(input_csv_file, output_excel_file, Scenario):
     df = pd.read_csv(input_csv_file, delimiter='\t') 
