@@ -73,7 +73,7 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     # Updated lambda function
     # Assuming extracted_data is your DataFram
     # print(extracted_data.columns)
-    extracted_data['Coverage_Percentage'] = extracted_data['"Condition %"'].str.replace('=', '').apply(eval)
+    extracted_data['Coverage_Percentage'] = extracted_data['"Multiple Conditions %"'].str.replace('=', '').apply(eval)
     # print(extracted_data['Coverage_Percentage'])
     # extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
     extracted_data.rename(columns={'File': 'File_Name'}, inplace=True)
