@@ -30,12 +30,12 @@ def cli_commands():
         exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
         csexe_command = f"cmcsexeimport -m {executable_path}.csmes -t {test_case} -e {executable_path}.csexe"
         report_command = f"cmreport --csmes={executable_path}.csmes --csv-excel={test_case}.csv"
-        try:
-            subprocess.run(exe_command, shell=True, check=True)
-            subprocess.run(csexe_command, shell=True, check=True)
-            # subprocess.run(report_command, shell=True, check=True)
-        except subprocess.CalledProcessError as e:
-            print(f"Error running test cases {test_case}: {e}")
+        # try:
+        #     subprocess.run(exe_command, shell=True, check=True)
+        #     subprocess.run(csexe_command, shell=True, check=True)
+        #     # subprocess.run(report_command, shell=True, check=True)
+        # except subprocess.CalledProcessError as e:
+        #     print(f"Error running test cases {test_case}: {e}")
     #     if os.path.exists(f"{executable_path}.csexe"):
     #        os.remove(f"{executable_path}.csexe")
     #        print(f"File {executable_path}.csexe removed successfully.")
@@ -49,6 +49,7 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     df = pd.read_csv(input_csv_file, delimiter='\t') 
     start_index = df.index[df.iloc[:, 0] == 'Function Tree'].tolist()[0] + 1
     end_index = df.index[df.iloc[:, 0] == 'Functions'].tolist()[0]
+    # print(start_index, end_index)
     extracted_data = df.iloc[start_index:end_index]
 
     # Split columns
@@ -69,6 +70,7 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     for column in columns_to_process:
         extracted_data[column.replace('"', '')] = extracted_data[column].str.strip('"')
         extracted_data = extracted_data.drop(columns=[column])
+
     extracted_data['Scenario'] = Scenario
     # Updated lambda function
     # Assuming extracted_data is your DataFram
@@ -81,16 +83,20 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     
 
     extracted_data.to_excel(output_excel_file, index=False)
+    
 
 def report_generation(data_folder, results_folder, scenario):
 
-    csv_files = [file for file in os.listdir(data_folder) if file.endswith('.csv')]
+    # csv_files = [file for file in os.listdir(data_folder) if file.endswith('.csv')]
+    
+    # print('start')
+    # for test_case in csv_files:
+    #     if not os.path.exists(results_folder):
+    #         os.makedirs(results_folder)
 
-    for test_case in csv_files:
-        if not os.path.exists(results_folder):
-            os.makedirs(results_folder)
-
-        input_csv_file = os.path.join(data_folder, test_case)
+    #     input_csv_file = os.path.join(data_folder, test_case)
+    #     print('ii',input_csv_file)
+        input_csv_file = data_folder+'tst_'+scenario+'.csv'
         output_excel_file = os.path.join(results_folder, f'coverage_test_{scenario}.xlsx')
         process_csv_file(input_csv_file, output_excel_file, scenario)
 

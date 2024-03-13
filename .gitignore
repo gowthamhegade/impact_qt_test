@@ -8,3 +8,6 @@ impactbasedtesting/database.py
 *.csv
 *.csv
 *.csv
+.ipynb_checkpoints/*
+impactbasedtesting/.ipynb_checkpoints/*
+impactbasedtesting/__pycache__/*

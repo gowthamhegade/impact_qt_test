@@ -73,11 +73,12 @@ def recommend_test_cases(coverage_path,final_changes):
     # print(df_coverage['Coverage_Percentage'])
     
     filtered_df = df_coverage[df_coverage.apply(lambda row: row['File_Name'] in final_changes.keys() and row['Method'] in final_changes[row['File_Name']], axis=1)].reset_index(drop=True)
-    # print(filtered_df)
+    print(filtered_df)
     grouped_df = filtered_df.groupby(['Method'])['Coverage_Percentage'].idxmax()
     # print(grouped_df)
+    # print(grouped_df)
     selected_test_cases = filtered_df.loc[grouped_df]['Scenario'].unique()
-    print(selected_test_cases)
+    # print(selected_test_cases)
     
     return list(selected_test_cases)
 

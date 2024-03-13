@@ -1,15 +1,21 @@
-import os, subprocess, database, shutil
-tst_folders = [folder for folder in os.listdir(database.TEST_SCRIPTS_PATH) if os.path.isdir(os.path.join(database.TEST_SCRIPTS_PATH, folder)) and folder.startswith("tst_")]
-print(tst_folders)
-for test_case in tst_folders:
-    test_cases_path = database.TEST_SCRIPTS_PATH
-    exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
-    report_command = f"cmreport --csmes={database.EXECUTABLE_PATH}.csmes --csv-excel={test_case}.csv"
-    try:
-        subprocess.run(exe_command, shell=True, check=True)
-        subprocess.run(report_command, shell=True, check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Error running test cases {test_case}: {e}")
-for test_case in tst_folders:
-    shutil.move(f"{test_case}.csv", f"data/{test_case}.csv")
-    
+import os, database, re
+
+
+def extract_tags(directory_path):
+    def remove_prefix(prefix, folders):
+        return [folder[len(prefix):] if folder.startswith(prefix) else folder for folder in folders]
+
+    all_items = os.listdir(directory_path)
+    folders = [item for item in all_items if os.path.isdir(os.path.join(directory_path, item))]
+    pattern = re.compile(r'^tst_')
+    selected_folders = [folder for folder in folders if pattern.match(folder)]
+
+    if "tst_":
+        selected_folders = remove_prefix("tst_", selected_folders)
+    print('sss',selected_folders)
+    return selected_folders
+
+
+s= extract_tags(database.TEST_SCRIPTS_PATH)
+for i in s:
+    print(i)

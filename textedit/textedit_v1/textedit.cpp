@@ -30,6 +30,10 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QPrintPreviewDialog>
+#include <coveragescanner.h> // Assuming a hypothetical coverage tool header
+
+
+
 
 const QString rsrcPath = ":/images";
 const QString rsrcPathh = "abc";
@@ -95,8 +99,18 @@ const QString rsrcPathh = "abc";
    fileNew();
 }
 
+void main() {
+    // Your test code here ...
+
+    __coveragescanner_clear(); // Clear the coverage data
+
+    // More test code... 
+    return 0;
+}
+
 void TextEdit::closeEvent(QCloseEvent *e)
 {
+	
    if (maybeSave())
       e->accept();
    else
@@ -657,7 +671,6 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with."));
-   cout << 'hello';
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)

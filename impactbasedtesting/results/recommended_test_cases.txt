@@ -1,2 +1,3 @@
 Suggested test case/s 
-1. LaunchApplication
+1. RibbonContents
+2. LaunchApplication
