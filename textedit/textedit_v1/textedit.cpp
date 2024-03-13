@@ -32,6 +32,7 @@
 #include <QPrintPreviewDialog>
 
 const QString rsrcPath = ":/images";
+const QString rsrcPathh = "abc";
 
    TextEdit::TextEdit(QWidget *parent)
 : QMainWindow(parent)
@@ -54,7 +55,6 @@ const QString rsrcPath = ":/images";
          this, SLOT(currentCharFormatChanged(QTextCharFormat)));
    connect(textEdit, SIGNAL(cursorPositionChanged()),
          this, SLOT(cursorPositionChanged()));
-   cout << 'hello';
 
    setCentralWidget(textEdit);
    textEdit->setFocus();
@@ -130,7 +130,6 @@ void TextEdit::setupFileActions()
    menu->addAction(a);
 
    menu->addSeparator();
-   cout << 'hello world';
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);

@@ -1,0 +1,223 @@
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t TestingI1 -d -p import_duplicates textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=s2233892.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t TestingI2 -d -p import_duplicates_and_empty textedit.exe.csexe
+Error: Cannot open CSExe file "textedit.exe.csexe" for reading.
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_SaveFile
+2024-03-12T18:38:35     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:38:35     START_TEST_CASE Start 'tst_SaveFile'            Test 'tst_SaveFile' started (tst_SaveFile)
+2024-03-12T18:38:38     END_TEST_CASE   End 'tst_SaveFile'              End of test 'tst_SaveFile'
+2024-03-12T18:38:39     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test1 -d -p import_duplicates_and_empty textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test1.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>
+
+
+Microsoft Windows [Version 10.0.19045.3930]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_SaveFile
+2024-03-12T18:41:52     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:41:52     START_TEST_CASE Start 'tst_SaveFile'            Test 'tst_SaveFile' started (tst_SaveFile)
+2024-03-12T18:41:54     END_TEST_CASE   End 'tst_SaveFile'              End of test 'tst_SaveFile'
+2024-03-12T18:41:55     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_SaveFile
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test1 -d -p import_duplicates_and_empty textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test1.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_RibbonContents
+2024-03-12T18:44:13     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:44:13     START_TEST_CASE Start 'tst_RibbonContents'      Test 'tst_RibbonContents' started (tst_RibbonContents)
+2024-03-12T18:44:19     END_TEST_CASE   End 'tst_RibbonContents'        End of test 'tst_RibbonContents'
+2024-03-12T18:44:21     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test2 -d -p import_duplicates_and_empty textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test2.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_LaunchApplication
+2024-03-12T18:45:58     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:45:58     START_TEST_CASE Start 'tst_LaunchApplication'   Test 'tst_LaunchApplication' started (tst_LaunchApplication)
+2024-03-12T18:45:59     END_TEST_CASE   End 'tst_LaunchApplication'     End of test 'tst_LaunchApplication'
+2024-03-12T18:46:00     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test3 -d -p import_duplicates_and_empty textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test3.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_SaveFile
+2024-03-12T18:48:21     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:48:21     START_TEST_CASE Start 'tst_SaveFile'            Test 'tst_SaveFile' started (tst_SaveFile)
+2024-03-12T18:48:24     END_TEST_CASE   End 'tst_SaveFile'              End of test 'tst_SaveFile'
+2024-03-12T18:48:25     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test4 -d -p import_duplicates_and_empty textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test4.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_LaunchApplication
+2024-03-12T18:57:43     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:57:43     START_TEST_CASE Start 'tst_LaunchApplication'   Test 'tst_LaunchApplication' started (tst_LaunchApplication)
+2024-03-12T18:57:44     END_TEST_CASE   End 'tst_LaunchApplication'     End of test 'tst_LaunchApplication'
+2024-03-12T18:57:45     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test1 -d -f 0 textedit.exe.csexe
+Error: unexpected argument '0'
+Invalid Command Line Arguments
+Error: Invalid arguments ('0') for option '-f' or usage of option '-f' not allowed.
+
+cmcsexeimport (C) The Qt Company
+
+Usage: cmcsexeimport <arguments>
+[ -d | --delete ]       Delete the imported file
+[ -S | --skipped ]      Mark all imported tests as skipped
+[ -I | --incident ]     Mark all imported tests as incident
+[ -P | --passed ]       Mark all imported tests as passed
+[ -F | --failed ]       Mark all imported tests as failed
+[ -C | --check-manually ]       Mark all imported tests as to be checked manually
+-m <argument> | --csmes=<argument>      CSMes file name
+( -e <argument> | --csexe=<argument> )  CSExe file name
+[ -f <argument> | --csmes-save-frequency=<argument> ]   Commit frequency to the CSMes file
+-t <argument> | --title=<argument>      Execution title
+[ -p <argument> | --policy=<argument> ] Import policy: ignore_duplicates (default), import_duplicates_and_empty, import_duplicates or merge
+[ -l <argument> | --csexe-list=<argument> ]     Text file containing a list of CSExe files to import
+[ -v | --verbose ]      Verbose output
+[ -D | --debug ]        Debug output
+( <argument> )  CSExe file name
+
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test1 -d -f 1 textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test1.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_SaveFile
+2024-03-12T18:59:36     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T18:59:36     START_TEST_CASE Start 'tst_SaveFile'            Test 'tst_SaveFile' started (tst_SaveFile)
+2024-03-12T18:59:39     END_TEST_CASE   End 'tst_SaveFile'              End of test 'tst_SaveFile'
+2024-03-12T18:59:40     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test2 -d -f 1 textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test2.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>squishrunner --testsuite C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\suite_TextEditSuite --testcase tst_RibbonContents
+2024-03-12T19:00:58     START           Start 'suite_TextEditSuite'     Test 'suite_TextEditSuite' started
+2024-03-12T19:00:58     START_TEST_CASE Start 'tst_RibbonContents'      Test 'tst_RibbonContents' started (tst_RibbonContents)
+2024-03-12T19:01:04     END_TEST_CASE   End 'tst_RibbonContents'        End of test 'tst_RibbonContents'
+2024-03-12T19:01:05     END             End 'suite_TextEditSuite'       End of test 'suite_TextEditSuite'
+*******************************************************
+Summary:
+Number of Test Cases:      1
+Number of Tests:           0
+Number of Errors:          0
+Number of Fatals:          0
+Number of Fails:           0
+Number of Passes:          0
+Number of Expected Fails:          0
+Number of Unexpected Passes:       0
+Number of Warnings:        0
+*******************************************************
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test3 -d -f 1 textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test3.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmcsexeimport -m textedit.exe.csmes -t Test4 -d -f 1 textedit.exe.csexe
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>cmreport --csmes=textedit.exe.csmes --csv-excel=Test4.csv
+
+C:\Users\Dell\Documents\qtcc\GitHub\impact_qt_test\textedit\textedit_v1>LaunchApplicationLaunchApplication
