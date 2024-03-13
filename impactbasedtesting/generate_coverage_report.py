@@ -19,7 +19,7 @@ def cli_commands():
     test_cases_path = database.TEST_SCRIPTS_PATH
     executable_path = database.EXECUTABLE_PATH
     tst_folders = [folder for folder in os.listdir(test_cases_path) if os.path.isdir(os.path.join(test_cases_path)) and folder.startswith("tst_")]
-    subprocess.run('make', shell=True, check=True, cwd = os.path.dirname(executable_path), capture_output=True)
+    # subprocess.run('make', shell=True, check=True, cwd = os.path.dirname(executable_path), capture_output=True)
 
     for test_case in tst_folders:
         if os.path.exists(f"{executable_path}.csexe"):
