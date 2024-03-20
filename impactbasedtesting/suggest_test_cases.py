@@ -70,7 +70,7 @@ def recommend_test_cases(coverage_path,final_changes):
     for filename in all_reports:
         df_temp_list.append(pd.read_excel(os.path.join(coverage_path, filename)))
     df_coverage = pd.concat(df_temp_list)
-    print(df_coverage['Coverage_Percentage'])
+    # print(df_coverage['Coverage_Percentage'])
     
     filtered_df = df_coverage[df_coverage.apply(lambda row: row['File_Name'] in final_changes.keys() and row['Method'] in final_changes[row['File_Name']], axis=1)].reset_index(drop=True)
     # print(filtered_df)
