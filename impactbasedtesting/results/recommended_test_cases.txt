@@ -1,3 +1,1 @@
 Suggested test case/s 
-1. copy_pasting
-2. RibbonContents
