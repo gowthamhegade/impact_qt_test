@@ -45,7 +45,7 @@ class TextEdit : public QMainWindow
       void textBold();
       void textUnderline();
       void textItalic();
-      void textFamily(const QStringList &f);
+      void textFamily(const QString &f);
       void textSize(const QString &p);
       void textStyle(int styleIndex);
       void textColor();

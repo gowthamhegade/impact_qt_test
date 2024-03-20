@@ -30,13 +30,8 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QPrintPreviewDialog>
-#include <coveragescanner.h> // Assuming a hypothetical coverage tool header
-
-
-
 
 const QString rsrcPath = ":/images";
-const QString rsrcPathh = "abc";
 
    TextEdit::TextEdit(QWidget *parent)
 : QMainWindow(parent)
@@ -45,7 +40,6 @@ const QString rsrcPathh = "abc";
    setupFileActions();
    setupEditActions();
    setupTextActions();
-   
 
    {
       QMenu *helpMenu = new QMenu(tr("Help"), this);
@@ -99,18 +93,8 @@ const QString rsrcPathh = "abc";
    fileNew();
 }
 
-void main() {
-    // Your test code here ...
-
-    __coveragescanner_clear(); // Clear the coverage data
-
-    // More test code... 
-    return 0;
-}
-
 void TextEdit::closeEvent(QCloseEvent *e)
 {
-	
    if (maybeSave())
       e->accept();
    else
@@ -122,7 +106,7 @@ void TextEdit::setupFileActions()
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
-  
+
    QMenu *menu = new QMenu(tr("&File"), this);
    menuBar()->addMenu(menu);
 
@@ -142,8 +126,9 @@ void TextEdit::setupFileActions()
    connect(a, SIGNAL(triggered()), this, SLOT(fileOpen()));
    tb->addAction(a);
    menu->addAction(a);
-   
+
    menu->addSeparator();
+
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);
@@ -175,7 +160,7 @@ void TextEdit::setupFileActions()
    a = new QAction(QIcon::fromTheme("exportpdf", QIcon(rsrcPath + "/exportpdf.png")),
          tr("&Export PDF..."), this);
    a->setPriority(QAction::LowPriority);
-   a->setShortcut(Qt::CTRL | Qt::Key_D);
+   a->setShortcut(Qt::CTRL + Qt::Key_D);
    connect(a, SIGNAL(triggered()), this, SLOT(filePrintPdf()));
    tb->addAction(a);
    menu->addAction(a);
@@ -184,7 +169,7 @@ void TextEdit::setupFileActions()
 #endif
 
    a = new QAction(tr("&Quit"), this);
-   a->setShortcut(Qt::CTRL | Qt::Key_Q);
+   a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
 }
@@ -244,7 +229,7 @@ void TextEdit::setupTextActions()
 
    actionTextBold = new QAction(QIcon::fromTheme("format-text-bold", QIcon(rsrcPath + "/textbold.png")),
          tr("&Bold"), this);
-   actionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
+   actionTextBold->setShortcut(Qt::CTRL + Qt::Key_B);
    actionTextBold->setPriority(QAction::LowPriority);
    QFont bold;
    bold.setBold(true);
@@ -257,7 +242,7 @@ void TextEdit::setupTextActions()
    actionTextItalic = new QAction(QIcon::fromTheme("format-text-italic", QIcon(rsrcPath + "/textitalic.png")),
          tr("&Italic"), this);
    actionTextItalic->setPriority(QAction::LowPriority);
-   actionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
+   actionTextItalic->setShortcut(Qt::CTRL + Qt::Key_I);
    QFont italic;
    italic.setItalic(true);
    actionTextItalic->setFont(italic);
@@ -268,7 +253,7 @@ void TextEdit::setupTextActions()
 
    actionTextUnderline = new QAction(QIcon::fromTheme("format-text-underline", QIcon(rsrcPath + "/textunder.png")),
          tr("&Underline"), this);
-   actionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
+   actionTextUnderline->setShortcut(Qt::CTRL + Qt::Key_U);
    actionTextUnderline->setPriority(QAction::LowPriority);
    QFont underline;
    underline.setUnderline(true);
@@ -296,16 +281,16 @@ void TextEdit::setupTextActions()
    }
    actionAlignJustify = new QAction(QIcon::fromTheme("format-justify-fill", QIcon(rsrcPath + "/textjustify.png")), tr("&Justify"), grp);
 
-   actionAlignLeft->setShortcut(Qt::CTRL | Qt::Key_L);
+   actionAlignLeft->setShortcut(Qt::CTRL + Qt::Key_L);
    actionAlignLeft->setCheckable(true);
    actionAlignLeft->setPriority(QAction::LowPriority);
-   actionAlignCenter->setShortcut(Qt::CTRL | Qt::Key_E);
+   actionAlignCenter->setShortcut(Qt::CTRL + Qt::Key_E);
    actionAlignCenter->setCheckable(true);
    actionAlignCenter->setPriority(QAction::LowPriority);
-   actionAlignRight->setShortcut(Qt::CTRL | Qt::Key_R);
+   actionAlignRight->setShortcut(Qt::CTRL + Qt::Key_R);
    actionAlignRight->setCheckable(true);
    actionAlignRight->setPriority(QAction::LowPriority);
-   actionAlignJustify->setShortcut(Qt::CTRL | Qt::Key_J);
+   actionAlignJustify->setShortcut(Qt::CTRL + Qt::Key_J);
    actionAlignJustify->setCheckable(true);
    actionAlignJustify->setPriority(QAction::LowPriority);
 
@@ -358,7 +343,8 @@ void TextEdit::setupTextActions()
    tb->addWidget(comboSize);
    comboSize->setEditable(true);
 
-   foreach(int size, QFontDatabase::standardSizes())
+   QFontDatabase db;
+   foreach(int size, db.standardSizes())
       comboSize->addItem(QString::number(size));
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
@@ -547,10 +533,10 @@ void TextEdit::textItalic()
    mergeFormatOnWordOrSelection(fmt);
 }
 
-void TextEdit::textFamily(const QStringList &f)
+void TextEdit::textFamily(const QString &f)
 {
    QTextCharFormat fmt;
-   fmt.setFontFamilies(f);
+   fmt.setFontFamily(f);
    mergeFormatOnWordOrSelection(fmt);
 }
 
