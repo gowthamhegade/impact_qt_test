@@ -1,21 +1,30 @@
-import os, database, re
+import os, database, re, subprocess
 
 
-def extract_tags(directory_path):
-    def remove_prefix(prefix, folders):
-        return [folder[len(prefix):] if folder.startswith(prefix) else folder for folder in folders]
+def cli_commands():
+    test_cases_path = database.TEST_SCRIPTS_PATH
+    executable_path = database.EXECUTABLE_PATH
+    textedit_path = database.TEXTEDIT_PATH
+    tst_folders = [folder for folder in os.listdir(test_cases_path) if os.path.isdir(os.path.join(test_cases_path)) and folder.startswith("tst_")]
+    
+    for test_case in tst_folders:
+        print('tst', tst_folders)
+        copy_release_command = f"copy /y {textedit_path}\\release {textedit_path}\\textedit_v1\\release"
+        copy_csexe_command = f"copy /y {textedit_path}\\cmscexe {textedit_path}\\textedit_v1"
+        exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
+        csexe_command = f"cmcsexeimport -m {executable_path}.csmes -t {test_case} -e {executable_path}.csexe"
+        report_command = f"cmreport --csmes={executable_path}.csmes --csv-excel={test_case}.csv"
+        delete_csexe_command = f"del {executable_path}.csexe"
+        try:
+            subprocess.run(copy_release_command, shell=True, check=True)
+            subprocess.run(copy_csexe_command, shell=True, check=True)
+            subprocess.run(exe_command, shell=True, check=True)
+            subprocess.run(csexe_command, shell=True, check=True)
+            subprocess.run(report_command, shell=True, check=True)
+            subprocess.run(delete_csexe_command, shell=True, check=True)
 
-    all_items = os.listdir(directory_path)
-    folders = [item for item in all_items if os.path.isdir(os.path.join(directory_path, item))]
-    pattern = re.compile(r'^tst_')
-    selected_folders = [folder for folder in folders if pattern.match(folder)]
-
-    if "tst_":
-        selected_folders = remove_prefix("tst_", selected_folders)
-    print('sss',selected_folders)
-    return selected_folders
+        except subprocess.CalledProcessError as e:
+            print(f"Error running test cases {test_case}: {e}")
 
 
-s= extract_tags(database.TEST_SCRIPTS_PATH)
-for i in s:
-    print(i)
+cli_commands()
