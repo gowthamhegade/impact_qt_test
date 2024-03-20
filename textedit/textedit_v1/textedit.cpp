@@ -616,6 +616,7 @@ void TextEdit::textColor()
    QColor col = QColorDialog::getColor(textEdit->textColor(), this);
    if (!col.isValid())
       return;
+   cout << 'hello'
    QTextCharFormat fmt;
    fmt.setForeground(col);
    mergeFormatOnWordOrSelection(fmt);
