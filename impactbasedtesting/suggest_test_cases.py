@@ -66,9 +66,11 @@ def recommend_test_cases(coverage_path,final_changes):
     df_temp_list = []
     all_files = os.listdir(coverage_path)
     all_reports = [file for file in all_files if os.path.splitext(file)[1].lower() == '.xlsx']
-
+    
     for filename in all_reports:
+        
         df_temp_list.append(pd.read_excel(os.path.join(coverage_path, filename)))
+
     df_coverage = pd.concat(df_temp_list)
     # print(df_coverage['Coverage_Percentage'])
     
