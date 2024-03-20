@@ -535,6 +535,7 @@ void TextEdit::textItalic()
 
 void TextEdit::textFamily(const QString &f)
 {
+	cout << 'hello'
    QTextCharFormat fmt;
    fmt.setFontFamily(f);
    mergeFormatOnWordOrSelection(fmt);
@@ -542,6 +543,7 @@ void TextEdit::textFamily(const QString &f)
 
 void TextEdit::textSize(const QString &p)
 {
+	
    qreal pointSize = p.toFloat();
    if (p.toFloat() > 0) {
       QTextCharFormat fmt;
@@ -553,7 +555,7 @@ void TextEdit::textSize(const QString &p)
 void TextEdit::textStyle(int styleIndex)
 {
    QTextCursor cursor = textEdit->textCursor();
-   cout << 'hello'
+   
    if (styleIndex != 0) {
       QTextListFormat::Style style = QTextListFormat::ListDisc;
 
