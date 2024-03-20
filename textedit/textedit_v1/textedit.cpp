@@ -553,7 +553,7 @@ void TextEdit::textSize(const QString &p)
 void TextEdit::textStyle(int styleIndex)
 {
    QTextCursor cursor = textEdit->textCursor();
-
+   cout << 'hello'
    if (styleIndex != 0) {
       QTextListFormat::Style style = QTextListFormat::ListDisc;
 
