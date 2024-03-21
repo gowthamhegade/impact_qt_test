@@ -27,7 +27,8 @@ def main():
     
     
     st.header("Impact Based Testing - Demo",)
-    col1, col2 = st.columns([1,1])
+    col1 = st.columns(1)[0]
+    col2 = st.columns(1)[0]
     
     if col1.button("Execute test cases"):
         with st.spinner('Please Wait!'):
