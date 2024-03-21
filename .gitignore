@@ -4,7 +4,6 @@ impactbasedtesting/ScriptGeneration_202401191029/*
 impactbasedtesting/results/git_changes/changes.xlsx
 dummy.ipynb
 *.xlsx
-impactbasedtesting/database.py
 impactbasedtesting/data/*
 impactbasedtesting/results/*
 *.csv
@@ -13,3 +12,5 @@ impactbasedtesting/results/*
 .ipynb_checkpoints/*
 impactbasedtesting/.ipynb_checkpoints/*
 /impactbasedtesting/__pycache__
+impactbasedtesting/database.py
+textedit/textedit_v1/textedit.exe.csmes
