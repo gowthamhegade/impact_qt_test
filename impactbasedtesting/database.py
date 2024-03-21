@@ -3,6 +3,6 @@ RESULT_PATH = REPO_PATH + "\\impactbasedtesting\\results"
 EXECUTABLE_PATH = REPO_PATH + "\\textedit\\textedit_v1\\textedit.exe"
 TEXTEDIT_PATH = REPO_PATH + "\\textedit"
 TEST_SCRIPTS_PATH = REPO_PATH + "\\textedit\\suite_TextEditSuite"
-START_COMMIT = "a6a07360cd5ae97281e18a727efa896441f74a0e"
+START_COMMIT = "296a075dff718737c2d866980ed6598502f67a71"
 # DATA_PATH = REPO_PATH + "\\impactbasedtesting\\data"
 input_data = REPO_PATH + '\\impactbasedtesting\\data\\'
