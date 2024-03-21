@@ -106,7 +106,7 @@ void TextEdit::setupFileActions()
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
-   cout << 'hello';
+   
    QMenu *menu = new QMenu(tr("&File"), this);
    menuBar()->addMenu(menu);
 
@@ -660,7 +660,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
-	cout <<'hh';
+	
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
