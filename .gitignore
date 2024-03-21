@@ -12,4 +12,4 @@ impactbasedtesting/results/*
 *.csv
 .ipynb_checkpoints/*
 impactbasedtesting/.ipynb_checkpoints/*
-impactbasedtesting/__pycache__/*
+/impactbasedtesting/__pycache__
