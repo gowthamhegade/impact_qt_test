@@ -5,6 +5,8 @@ impactbasedtesting/results/git_changes/changes.xlsx
 dummy.ipynb
 *.xlsx
 impactbasedtesting/database.py
+impactbasedtesting/data/*
+impactbasedtesting/results/*
 *.csv
 *.csv
 *.csv
