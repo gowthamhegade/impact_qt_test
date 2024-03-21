@@ -19,6 +19,7 @@ def cli_commands():
     test_cases_path = database.TEST_SCRIPTS_PATH
     executable_path = database.EXECUTABLE_PATH
     textedit_path = database.TEXTEDIT_PATH
+    result_path = database.RESULT_PATH
     tst_folders = [folder for folder in os.listdir(test_cases_path) if os.path.isdir(os.path.join(test_cases_path)) and folder.startswith("tst_")]
     # subprocess.run('make', shell=True, check=True, cwd = os.path.dirname(executable_path), capture_output=True)
     
@@ -34,6 +35,7 @@ def cli_commands():
         exe_command = f"squishrunner --testsuite {test_cases_path} --testcase {test_case}"
         csexe_command = f"cmcsexeimport -m {executable_path}.csmes -t {test_case} -e {executable_path}.csexe"
         report_command = f"cmreport --csmes={executable_path}.csmes --csv-excel={test_case}.csv"
+        html_report = f"cmreport --csmes={executable_path}.csmes --html={result_path}\\coverage_reports\\html_reports\\{test_case}"
         delete_csexe_command = f"del {executable_path}.csexe"
         try:
             subprocess.run(copy_release_command, shell=True, check=True)
@@ -41,6 +43,7 @@ def cli_commands():
             subprocess.run(exe_command, shell=True, check=True)
             subprocess.run(csexe_command, shell=True, check=True)
             subprocess.run(report_command, shell=True, check=True)
+            subprocess.run(html_report, shell=True, check=True)
             subprocess.run(delete_csexe_command, shell=True, check=True)
 
         except subprocess.CalledProcessError as e:
@@ -89,9 +92,10 @@ def process_csv_file(input_csv_file, output_excel_file, Scenario):
     # extracted_data.rename(columns={'"Multiple Conditions %"': 'Coverage_Percentage'}, inplace=True)
     extracted_data.rename(columns={'File': 'File_Name'}, inplace=True)
     extracted_data.rename(columns={'Function': 'Method'}, inplace=True)
-    
+    extracted_data = extracted_data.loc[:, ['Scenario', 'Method', 'File_Name', 'Absolute Path', 'Coverage_Percentage']]
 
     extracted_data.to_excel(output_excel_file, index=False)
+    
     
 
 def report_generation(data_folder, results_folder, scenario):

@@ -623,7 +623,7 @@ void TextEdit::textColor()
    fmt.setForeground(col);
    mergeFormatOnWordOrSelection(fmt);
    colorChanged(col);
-   cout << 'hello';
+   
 }
 
 void TextEdit::textAlign(QAction *a)
@@ -661,7 +661,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
-	cout << 'hello';
+	
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
