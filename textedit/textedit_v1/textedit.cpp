@@ -106,7 +106,7 @@ void TextEdit::setupFileActions()
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
-   
+   cout << 'hello';
    QMenu *menu = new QMenu(tr("&File"), this);
    menuBar()->addMenu(menu);
 
