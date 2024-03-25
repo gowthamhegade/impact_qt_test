@@ -103,7 +103,7 @@ void TextEdit::closeEvent(QCloseEvent *e)
 
 void TextEdit::setupFileActions()
 {
-	cout << 'h';
+	
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
@@ -129,7 +129,7 @@ void TextEdit::setupFileActions()
    menu->addAction(a);
 
    menu->addSeparator();
-
+   cout << 'h';
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);
