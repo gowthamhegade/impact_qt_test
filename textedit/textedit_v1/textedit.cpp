@@ -129,7 +129,7 @@ void TextEdit::setupFileActions()
    menu->addAction(a);
 
    menu->addSeparator();
-   cout << 'h';
+   
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);
@@ -173,6 +173,7 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
+   cout << 'h';
 }
 
 void TextEdit::setupEditActions()
