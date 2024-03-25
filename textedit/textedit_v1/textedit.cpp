@@ -103,7 +103,6 @@ void TextEdit::closeEvent(QCloseEvent *e)
 
 void TextEdit::setupFileActions()
 {
-	
    QToolBar *tb = new QToolBar(this);
    tb->setWindowTitle(tr("File Actions"));
    addToolBar(tb);
@@ -129,7 +128,7 @@ void TextEdit::setupFileActions()
    menu->addAction(a);
 
    menu->addSeparator();
-   
+
    actionSave = a = new QAction(QIcon::fromTheme("document-save", QIcon(rsrcPath + "/filesave.png")),
          tr("&Save"), this);
    a->setShortcut(QKeySequence::Save);
@@ -173,7 +172,6 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
-   cout << 'hhh';
 }
 
 void TextEdit::setupEditActions()
@@ -446,7 +444,6 @@ bool TextEdit::fileSave()
    bool success = writer.write(textEdit->document());
    if (success)
       textEdit->document()->setModified(false);
-   cout << 'kasl';
    return success;
 }
 
@@ -626,7 +623,7 @@ void TextEdit::textColor()
    fmt.setForeground(col);
    mergeFormatOnWordOrSelection(fmt);
    colorChanged(col);
-   cout << 'h';
+
    
 }
 
@@ -666,7 +663,7 @@ void TextEdit::about()
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
 
-    cout << 'h';
+
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
