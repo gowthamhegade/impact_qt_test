@@ -172,6 +172,7 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
+   cout << 'h';
 }
 
 void TextEdit::setupEditActions()
@@ -663,7 +664,7 @@ void TextEdit::about()
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
 
-
+   cout << 'hhh';
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
