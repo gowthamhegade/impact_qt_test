@@ -173,7 +173,7 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
-   cout << 'h';
+   cout << 'hhh';
 }
 
 void TextEdit::setupEditActions()
