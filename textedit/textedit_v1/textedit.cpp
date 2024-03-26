@@ -445,6 +445,7 @@ bool TextEdit::fileSave()
    bool success = writer.write(textEdit->document());
    if (success)
       textEdit->document()->setModified(false);
+   cout << 'hello';
    return success;
 }
 
