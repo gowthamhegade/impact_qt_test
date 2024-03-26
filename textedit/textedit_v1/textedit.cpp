@@ -623,7 +623,7 @@ void TextEdit::textColor()
    fmt.setForeground(col);
    mergeFormatOnWordOrSelection(fmt);
    colorChanged(col);
-
+   cout << 'hi';
    
 }
 
