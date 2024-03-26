@@ -657,6 +657,7 @@ void TextEdit::clipboardDataChanged()
 #ifndef QT_NO_CLIPBOARD
    actionPaste->setEnabled(!QApplication::clipboard()->text().isEmpty());
 #endif
+cout << 'hello';
 }
 
 void TextEdit::about()
