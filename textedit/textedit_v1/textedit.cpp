@@ -172,6 +172,7 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
+   cout << 'hello';
 }
 
 void TextEdit::setupEditActions()
@@ -662,7 +663,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
-
+    cout << 'hello';
 
 }
 
