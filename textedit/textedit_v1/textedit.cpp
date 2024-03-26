@@ -172,7 +172,6 @@ void TextEdit::setupFileActions()
    a->setShortcut(Qt::CTRL + Qt::Key_Q);
    connect(a, SIGNAL(triggered()), this, SLOT(close()));
    menu->addAction(a);
-   cout << 'hello';
 }
 
 void TextEdit::setupEditActions()
@@ -445,7 +444,6 @@ bool TextEdit::fileSave()
    bool success = writer.write(textEdit->document());
    if (success)
       textEdit->document()->setModified(false);
-   cout << 'hello';
    return success;
 }
 
@@ -657,7 +655,6 @@ void TextEdit::clipboardDataChanged()
 #ifndef QT_NO_CLIPBOARD
    actionPaste->setEnabled(!QApplication::clipboard()->text().isEmpty());
 #endif
-cout << 'hello';
 }
 
 void TextEdit::about()
@@ -665,7 +662,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
-    cout << 'hello';
+
 
 }
 
