@@ -655,6 +655,7 @@ void TextEdit::clipboardDataChanged()
 #ifndef QT_NO_CLIPBOARD
    actionPaste->setEnabled(!QApplication::clipboard()->text().isEmpty());
 #endif
+cout << 'hello';
 }
 
 void TextEdit::about()
@@ -663,7 +664,7 @@ void TextEdit::about()
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
 
-
+   cout << 'hello';
 }
 
 void TextEdit::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
