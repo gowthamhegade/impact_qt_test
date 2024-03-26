@@ -623,7 +623,7 @@ void TextEdit::textColor()
    fmt.setForeground(col);
    mergeFormatOnWordOrSelection(fmt);
    colorChanged(col);
-   cout << 'hello, world';
+
    
 }
 
@@ -655,7 +655,6 @@ void TextEdit::clipboardDataChanged()
 #ifndef QT_NO_CLIPBOARD
    actionPaste->setEnabled(!QApplication::clipboard()->text().isEmpty());
 #endif
-cout << 'hello, world';
 }
 
 void TextEdit::about()
@@ -663,7 +662,7 @@ void TextEdit::about()
    QMessageBox::about(this, tr("About"), tr("This example demonstrates Qt's "
             "rich text editing facilities in action, providing an example "
             "document for you to experiment with.")
-    cout << 'hello, world';
+
 
 }
 
