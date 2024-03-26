@@ -31,6 +31,7 @@ def main():
     col2 = st.columns(1)[0]
     
     if col1.button("Execute test cases"):
+      try:
         with st.spinner('Please Wait!'):
             generate_coverage_report.cli_commands()
             for scenario in scenario_list:
@@ -48,6 +49,8 @@ def main():
                 # else:
                 #      generate_coverage_report.extract_coverage_info(xml_file_path,result_path,scenario,mapping=True)
         st.success("Test cases are executed and code coverage reports are generated!")
+      except Exception as e:
+        pass
     
     if col2.button("Recommend impacted test cases"):
         final_changes = suggest_test_cases.git_diff(repo_path,result_path,start_commit)
