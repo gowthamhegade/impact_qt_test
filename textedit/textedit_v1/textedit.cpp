@@ -624,7 +624,7 @@ void TextEdit::textColor()
    mergeFormatOnWordOrSelection(fmt);
    colorChanged(col);
    
-   
+   cout << 'hello, world';
 }
 
 void TextEdit::textAlign(QAction *a)
